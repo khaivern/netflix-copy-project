@@ -45,7 +45,6 @@ const Login = () => {
                 },
               });
               const data = response.data;
-              console.log({ data });
               if (data.success) {
                 router.push("/");
               } else {

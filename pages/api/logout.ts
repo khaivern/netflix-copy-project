@@ -15,7 +15,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       await magicAdmin.users.logoutByIssuer(userId);
     } catch (err) {
-      console.log("User's session with Magic already expired");
       console.error("Error occurred while logging out magic user", err);
     }
     return res.writeHead(402, { location: "/login" }).end();

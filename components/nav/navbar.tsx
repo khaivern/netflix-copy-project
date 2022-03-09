@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
           setDidToken(DIDToken);
         }
       } catch (err: any) {
-        console.log("Error Retrieving email", err.message);
+        console.error("Error Retrieving email", err.message);
       }
     };
     getUserEmail();
@@ -55,7 +55,7 @@ const NavBar: React.FC = () => {
         },
       });
     } catch (err: any) {
-      console.log("Error Signing out", err.message);
+      console.error("Error Signing out", err.message);
     }
   };
 

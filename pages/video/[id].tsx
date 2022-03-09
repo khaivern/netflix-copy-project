@@ -59,14 +59,12 @@ const VideoDetailPage = ({
     setIsLikedReaction(true);
     setIsTouched(true);
     const response = await sendAxiosReactionRequest({ isFavourite: 1, id });
-    console.log(response);
   };
 
   const toggleDisLikeHandler = async () => {
     setIsLikedReaction(false);
     setIsTouched(true);
     const response = await sendAxiosReactionRequest({ isFavourite: 0, id });
-    console.log(response);
   };
 
   // send GET request when component mounts
