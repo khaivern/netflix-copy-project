@@ -2,15 +2,12 @@ import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import { verifyTokenCookie } from "../lib/cookies";
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-  let url = req.nextUrl.clone();
-  const pathname = url.pathname;
-
+  let pathname = req.nextUrl.pathname;
   const token = req ? req.cookies.token : null;
-  const userId = token && verifyTokenCookie(token);
-  if (userId || pathname.includes("/api/login") || pathname.includes("/static/"))
+  // const userId = verifyTokenCookie(token);
+  if (token || pathname.includes("/api/login") || pathname.includes("/static/"))
     return NextResponse.next();
-  if (!token && pathname !== "/login") {
-    url.pathname = "/login";
-    return NextResponse.redirect(url);
+  else if (!token && pathname !== "/login") {
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 }

@@ -39,6 +39,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       return res.status(403).json({ message: "Missing required token / videoId" });
     } else {
       const userId = verifyTokenCookie(token);
+      if (!userId) {
+        throw new Error("User Id not present in cookie");
+      }
       const listOfVideos = await getVideosClickedByUser(token, userId, videoId);
       let response;
       if (req.method === "POST") {

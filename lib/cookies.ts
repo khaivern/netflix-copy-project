@@ -23,12 +23,15 @@ export const removeTokenCookie = (res: NextApiResponse) => {
   res.setHeader("Set-Cookie", val);
 };
 
-export const verifyTokenCookie = (token: string) => {
+export const verifyTokenCookie = (token: string | null) => {
   const HASURA_JWT_SECRET_KEY = process.env.HASURA_JWT_SECRET_KEY;
-  const decodedToken =
-    HASURA_JWT_SECRET_KEY && (jwt.verify(token, HASURA_JWT_SECRET_KEY) as { issuer: string });
+  if (!token || !HASURA_JWT_SECRET_KEY) {
+    return null;
+  }
+  const decodedToken = jwt.verify(token, HASURA_JWT_SECRET_KEY) as { issuer: string };
   if (!decodedToken) {
-    throw new Error("Decoded token is not valid");
+    console.error("Decoded token is not valid");
+    return null;
   }
   return decodedToken.issuer;
 };

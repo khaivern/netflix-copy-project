@@ -13,6 +13,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     removeTokenCookie(res);
 
     try {
+      if (!userId) {
+        throw new Error("UserId is null");
+      }
       await magicAdmin.users.logoutByIssuer(userId);
     } catch (err) {
       console.error("Error occurred while logging out magic user", err);
