@@ -11,11 +11,17 @@ const SectionCard: React.FC<SectionCardProps> = ({
   size,
   shouldWrap,
   shouldScale,
+  isCentered,
 }) => {
   return (
     <section className={classes.container}>
       <h2 className={classes.title}>{title}</h2>
-      <div className={cls(classes.cardWrapper, shouldWrap && classes.wrap)}>
+      <div
+        className={cls(
+          classes.cardWrapper,
+          shouldWrap && classes.wrap,
+          isCentered && classes.centered
+        )}>
         {videos.map((video, idx) => (
           <Card
             key={idx}

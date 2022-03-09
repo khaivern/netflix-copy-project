@@ -18,6 +18,7 @@ export interface SectionCardProps {
   size: "large" | "medium" | "small";
   shouldWrap?: boolean;
   shouldScale?: boolean;
+  isCentered?: boolean;
 }
 
 // export interface NavBarProps {

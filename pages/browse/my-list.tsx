@@ -44,6 +44,7 @@ const MyListPage = ({ myListVideos }: InferGetServerSidePropsType<typeof getServ
             size='small'
             shouldWrap
             shouldScale={false}
+            isCentered
           />
         </div>
       </main>

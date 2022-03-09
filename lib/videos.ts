@@ -8,10 +8,10 @@ import videoDevelopmentData from "../data/videos.json";
 import { getFavouritedVideos, getWatchedVideos } from "./db/hasura";
 
 export const invokeYoutubeAPICall = async (url: string, params: object) => {
-  const isDevelopmentStage = process.env.DEVELOPMENT_STAGE;
-  if (!isDevelopmentStage) {
-    return videoDevelopmentData.items;
-  }
+  // const isDevelopmentStage = process.env.DEVELOPMENT_STAGE;
+  // if (isDevelopmentStage) {
+  //   return videoDevelopmentData.items;
+  // }
   try {
     const response = await axios({
       url: `https://youtube.googleapis.com/youtube/v3/${url}`,
@@ -29,7 +29,7 @@ export const invokeYoutubeAPICall = async (url: string, params: object) => {
 export const getVideos = async (query: string) => {
   const params = {
     part: "snippet",
-    maxResults: "5",
+    maxResults: "25",
     q: query,
   };
   try {

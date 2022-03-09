@@ -61,19 +61,19 @@ const Home = ({
           imageUrl='/static/batman.webp'
         />
         <div className={styles.sectionWrapper}>
-          <SectionCard title='Horror' videos={horrorVideos} size='large' />
+          <SectionCard title='Horror' videos={horrorVideos} size='large' shouldScale />
         </div>
         <div className={styles.sectionWrapper}>
-          <SectionCard title='Watch It Again' videos={videosWatched} size='small' />
+          <SectionCard title='Watch It Again' videos={videosWatched} size='small' shouldScale />
         </div>
         <div className={styles.sectionWrapper}>
-          <SectionCard title='Gaming' videos={gamingVideos} size='small' />
+          <SectionCard title='Gaming' videos={gamingVideos} size='small' shouldScale />
         </div>
         <div className={styles.sectionWrapper}>
-          <SectionCard title='Comedy' videos={comedyVideos} size='medium' />
+          <SectionCard title='Comedy' videos={comedyVideos} size='medium' shouldScale />
         </div>
         <div className={styles.sectionWrapper}>
-          <SectionCard title='Popular' videos={popularVideos} size='small' />
+          <SectionCard title='Popular' videos={popularVideos} size='small' shouldScale />
         </div>
       </div>
     </div>

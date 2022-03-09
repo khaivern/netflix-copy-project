@@ -15,12 +15,14 @@
 .cardWrapper {
   display: flex;
   padding: 1.7rem 1rem 1.5rem;
-  justify-content: center;
-  column-gap: 0.5rem;
   margin-top: 1.5rem /* 24px */;
   margin-right: 0.75rem /* 12px */;
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+.centered {
+  justify-content: center;
 }
 
 .wrap {
