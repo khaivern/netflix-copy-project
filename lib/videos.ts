@@ -49,6 +49,7 @@ export const getPopularVideos = async () => {
     part: "snippet,contentDetails,statistics",
     chart: "mostPopular",
     regionCode: "US",
+    maxResults: 25,
   };
   try {
     const resultsArray = await invokeYoutubeAPICall("videos", params);

@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { removeTokenCookie, verifyTokenCookie } from "../../lib/cookies";
+import { removeTokenCookie } from "../../lib/cookies";
 import { magicAdmin } from "../../lib/magic";
+import { verifyTokenCookie } from "../../lib/cookies";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {

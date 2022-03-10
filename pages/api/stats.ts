@@ -4,8 +4,8 @@ import {
   insertVideoRow,
   updateVideoFieldsByUserId,
 } from "../../lib/db/hasura";
-import { RequiredFieldsInStatsTable } from "../../models";
 import { verifyTokenCookie } from "../../lib/cookies";
+import { RequiredFieldsInStatsTable } from "../../models";
 
 async function handlePostRequest(
   token: string,

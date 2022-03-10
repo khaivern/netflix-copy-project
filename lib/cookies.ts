@@ -1,6 +1,6 @@
 import cookie from "cookie";
-import { NextApiResponse } from "next";
 import jwt from "jsonwebtoken";
+import { NextApiResponse } from "next";
 import { GetServerSidePropsContext } from "next";
 
 const MAX_AGE = 7 * 24 * 60 * 60;

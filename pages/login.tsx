@@ -44,8 +44,8 @@ const Login = () => {
                   "Content-Type": "application/json",
                 },
               });
-              const data = response.data;
-              if (data.success) {
+              console.log(response.status);
+              if (response.status === 200) {
                 router.push("/");
               } else {
                 setIsLoading(false);
