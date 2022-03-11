@@ -29,7 +29,7 @@ export const invokeYoutubeAPICall = async (url: string, params: object) => {
 export const getVideos = async (query: string) => {
   const params = {
     part: "snippet",
-    maxResults: "25",
+    maxResults: "10",
     q: query,
   };
   try {
@@ -49,7 +49,7 @@ export const getPopularVideos = async () => {
     part: "snippet,contentDetails,statistics",
     chart: "mostPopular",
     regionCode: "US",
-    maxResults: 25,
+    maxResults: 10,
   };
   try {
     const resultsArray = await invokeYoutubeAPICall("videos", params);
